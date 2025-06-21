@@ -7,7 +7,31 @@
   <title><%= title %></title>
 </head>
 <body>
-  <h1> Test </h1>
-  <p><%= test %></p>
+  <!-- ! This section is for testing -->
+  <section class="navbar">
+    <section id="navbar-notification_center" class="success">
+      <p class="message"></p>
+    </section>
+  </section>
+
+  <section class="service_actions-container">
+    <div class="service_actions-add"> 
+      <button class="button_add">
+        Add a new service
+      </button>
+    </div>
+    <div class="service_actions-remove">
+      <form action="" method="post" class="form_remove">
+        <input type="text" name="form_remove-input" id="form_remove-input">
+        <button type="submit">Remove a service</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="service_display-container">
+    
+  </section>
+
+  <script src="/script/home.js"></script>
 </body>
 </html>
