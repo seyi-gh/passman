@@ -2,9 +2,20 @@ import { MongoClient } from "mongodb";
 import config from "./config.js";
 
 const uri = `mongodb://localhost:${config.port_mongo}`;
-const client = new MongoClient(uri);
 
-let db: ReturnType<typeof client.db>;
+function handleClient() {
+  try {
+    let client = new MongoClient(uri);
+    return client;
+  }
+  catch {
+    console.log('< Not mongodb connection found');
+    process.exit(1);
+  }
+}
+
+const client = handleClient();
+let db: ReturnType<MongoClient["db"]>;
 
 export default async function connectDB() {
   if (!db) {

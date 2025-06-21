@@ -1,5 +1,5 @@
 import { Router } from "express";
-import CServices from "../controllers/services";
+import CServices from "../controllers/services.js";
 
 const Rservice = Router();
 const cservices = new CServices();
