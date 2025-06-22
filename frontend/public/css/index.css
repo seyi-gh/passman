@@ -1,37 +1,61 @@
+:root {
+  --color-background: #2b2b2b;
+}
+
 body {
   font-family: 'Ubuntu';
   font-size: 1.3rem;
   text-align: center;
+  background-color: var(--color-background);
 }
+/*! Removing for test
 section {
-  display: inline-flex;
+  display: flex;
 }
+*/
 p {
   margin: 0;
 }
-
-/*! Change the path to an individual file */
 button {
-  color: #fff;
-  background-color: #5e4c7f;
   border: none;
-  padding: 1rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+}
+svg {
+  padding: 0;
+  margin: 0;
+}
+input:focus {
+  outline: none;
+}
+.invisible {
+  display: none;
+}
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
+/*! Change this code to an individual file */
 /* Main section container for service actions */
 .service_actions-container {
   display: inline-flex;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 3rem;
   justify-content: center;
-  background-color: #a7a4ab;
-  padding: 2rem 1rem;
-  border-radius: 0.7rem;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 1.2rem 1.3rem;
+  border-radius: 1rem;
 }
 
-/* Text input from the form in services actions */
+/*! [REMOVED] Text input from the form in services actions */
 #form_remove-input {
   padding: 0.9rem 0.7rem;
   border: 0.1rem solid #f6f6f6;
@@ -43,6 +67,107 @@ button {
   outline: none;
 }
 
+/* Section-Actions | Search input form */
+.service_actions-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+  gap: 1rem;
+  height: 2.9rem;
+  font-size: 1.7rem;
+}
+#service_actions-add_button { /* Add button */
+  background-color: transparent;
+}
+#service_actions-search_query { /* Search query section */
+  flex: 1;
+  border-radius: 0.5rem;
+  background-color: #f6f6f6;
+  padding-left: 0.5rem;
+  color: var(--color-background);
+  height: 100%;
+}
+#service_actions-search_button {
+  padding: 0;
+}
+#service_actions-search_button svg {
+  color: #f6f6f6;
+  height: 2.3rem;
+  width: 2.3rem;
+}
+
+
+/* Service for display all the services */
+.service_display-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  max-width: 76rem; /* 4 * 18rem + 3 * 3rem gap */
+  gap: 3rem;
+  margin: 4rem auto 0 auto;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.service_display-container .service_item { /* Actually the style of items */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #1e1e1e;
+  width: 25rem;
+  color: #919191;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+}
+.service_item .code { /* _id code from the service */
+  position: absolute;
+  top: 0.3rem;
+  font-size: 0.7rem;
+}
+.service_item .metadata { /* container for metadata divs */
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+.service_item .metadata .row { /* label and data container */
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+.service_item .metadata .row .label {
+  flex: 1;
+  text-align: start;
+}
+.service_item .metadata .row .data {
+  flex: 3;
+  text-align: end;
+  color: #d8d8d8
+}
+.service_item .service_item-remove_button { /* the remove button for the service */
+  position: absolute;
+  top: -0.5rem;
+  right: -0.6rem;
+  height: 1.7rem;
+  width: 1.7rem;
+}
+.service_item .service_item-remove_button svg {
+  color: #903f3f;
+  stroke: #903f3f;
+  fill: #903f3f;
+}
+.service_item .service_item-add_button {
+  background-color: var(--color-background);
+  color: #d8d8d8;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
 
 /*! This is optional | navbar application as a test */
 .navbar {

@@ -11,10 +11,18 @@ class CServices {
     let doc = await services.insertOne({ _name: 'unnamed' });
     return doc.insertedId.toString();
   }
-  
+
+  async search(query: string) {
+    let sep = query.split(':');
+    const find_key = sep[0];
+    const find_term = sep[1];
+    const response = await services.find({ [find_key]: find_term }).toArray();
+    return response;
+  }
+
   async update(id: string, action: string, data: object) {
     if (action == 'append') {
-      const response = services.updateOne(
+      const response = await services.updateOne(
         { _id: new ObjectId(id) },
         { $set: data }
       );

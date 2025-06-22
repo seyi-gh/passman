@@ -15,21 +15,65 @@
   </section>
 
   <section class="service_actions-container">
+    <!--TODO Change the flow of adding a new service
     <div class="service_actions-add"> 
       <button class="button_add">
         Add a new service
       </button>
     </div>
+    -->
+
+    <button id="service_actions-add_button">
+      <%- include('static/svg/add') %>
+    </button>
+
+    <form action="/#" method="post" class="service_actions-search">
+      <input type="text" name="search_query" id="service_actions-search_query">
+      <button id="service_actions-search_button">
+        <%- include('static/svg/search') %>
+      </button>
+      <input type="submit" value="Not display object" class="invisible">
+    </form>
+
+    <!--TODO Replace this for service_items option
     <div class="service_actions-remove">
       <form action="" method="post" class="form_remove">
         <input type="text" name="form_remove-input" id="form_remove-input">
         <button type="submit">Remove a service</button>
       </form>
     </div>
+    -->
   </section>
 
   <section class="service_display-container">
-    
+    <div class="service_item" id="685630a6813ed3813dcd28ce"> <!--! Main template for service_item -->
+      <p class="code">_id:685630a6813ed3813dcd28ce</p>
+      <button class="service_item-remove_button"> <!--! Fix front side loading svg -->
+        <%- include('static/svg/remove') %>
+      </button>
+      <div class="metadata">
+        <div class="row">
+          <p class="label">name</p>
+          <p class="data">twitch</p>
+        </div>
+        <div class="row">
+          <p class="label">username</p>
+          <p class="data">seyishi</p>
+        </div>
+        <div class="row">
+          <p class="label">email</p>
+          <p class="data">aesioseyuri@gmail.com</p>
+        </div>
+      </div>
+
+      <button class="service_item-add_button">
+        +
+      </button>
+    </div>
+
+    <div class="service_item" id="685630a6813ed3813dcd28ce">
+      <p class="code">685630a6813ed3813dcd28ce</p>
+    </div>
   </section>
 
   <script src="/script/home.js"></script>

@@ -16,6 +16,21 @@ Rservice.post('/init', async (req, res) => {
   }
 });
 
+Rservice.post('/search', async (req, res) => {
+  try {
+    let { query } = req.body;
+    if (!query) {
+      res.status(401).json({ error: '`query` field is required' });
+      return;
+    }
+    const response = await cservices.search(query);
+    res.status(200).json({ data: response });
+  }
+  catch {
+    res.status(500).json({ error: 'Internal error' });
+  }
+});
+
 Rservice.post('/update', async (req, res) => {
   try {
     const { id, action, data } = req.body;
